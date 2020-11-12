@@ -12,11 +12,6 @@ submit.addEventListener("click", function(e){
     e.preventDefault();
     console.log("submit")
 
-    const topDiv = document.createElement("div")
-    topDiv.setAttribute('class', 'topdiv')
-    const bottomDiv = document.createElement("div")
-    bottomDiv.setAttribute('class', 'bottomdiv')
-
     const topText = document.createElement("p")
     topText.setAttribute('id', 'top')
     topText.innerText = `${topTextInput.value}`
@@ -24,19 +19,16 @@ submit.addEventListener("click", function(e){
     bottomText.setAttribute('id', 'bottom')
     bottomText.innerText = `${bottomTextInput.value}`
 
-    topDiv.appendChild(topText)
-    bottomDiv.appendChild(bottomText)
-
     const memePic = document.createElement("img")
     memePic.setAttribute('src', `${imgInput.value}`)
 
-    console.log(topText)
-    console.log(bottomText)
-    console.log(`${imgInput.value}`)
+    // console.log(topText)
+    // console.log(bottomText)
+    // console.log(`${imgInput.value}`)
 
     imgDiv.appendChild(memePic)
-    memePic.appendChild(topDiv)
-    memePic.appendChild(bottomDiv)
+    imgDiv.appendChild(topText)
+    imgDiv.appendChild(bottomText)
 })
 
 // function createTopText(text) {

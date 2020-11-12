@@ -13,20 +13,20 @@ h1 {
 p {
     font-family: Impact, Charcoal, sans-serif;
     color: white;
-    font-size: 1.5em;
-    /* z-index: 2; */
+    font-size: 1.75em;
+    text-align: center;
 }
 
-.topdiv {
+#top {
     position: absolute;
-    top: 10px;
-    /* z-index: 1; */
+    top: 5%;
+    left: 15%;
 }
 
-.bottomdiv {
+#bottom {
     position: absolute;
-    bottom: 10px;
-    /* z-index: 1; */
+    bottom: 5%;
+    left: 15%;
 }
 
 #meme {
@@ -60,6 +60,6 @@ input[type=submit] {
   }
 
   img {
-      position: relative;
+      /* position: relative; */
       z-index: -1;
   }
