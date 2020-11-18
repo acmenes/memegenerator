@@ -3,6 +3,7 @@ const topTextInput = document.querySelector("input[name='toptext']")
 const bottomTextInput = document.querySelector("input[name='bottomtext']")
 const imgInput = document.querySelector("input[name='imglink']")
 const imgDiv = document.querySelector("#meme")
+const text = document.querySelectorAll("p")
 
 //append your image to the div container, and the text to the image
 //create a clear button like you did in the todolist
@@ -18,35 +19,31 @@ submit.addEventListener("click", function(e){
     const bottomText = document.createElement("p")
     bottomText.setAttribute('id', 'bottom')
     bottomText.innerText = `${bottomTextInput.value}`
+    const allDiv = document.createElement("div")
+    allDiv.setAttribute('class', 'alldiv')
+
+    allDiv.appendChild(topText)
+    allDiv.appendChild(bottomText)
+
+    const remove = document.createElement("button")
+    remove.innerText = "X"
+    allDiv.appendChild(remove)
+    remove.addEventListener("click", function(e){
+        this.parentElement.remove();
+    })
 
     const memePic = document.createElement("img")
     memePic.setAttribute('src', `${imgInput.value}`)
 
-    // console.log(topText)
-    // console.log(bottomText)
-    // console.log(`${imgInput.value}`)
+    allDiv.appendChild(memePic)
 
-    imgDiv.appendChild(memePic)
-    imgDiv.appendChild(topText)
-    imgDiv.appendChild(bottomText)
+    imgDiv.appendChild(allDiv)
 })
 
-// function createTopText(text) {
-//     const top = document.createElement("p")
-//     top.innerText = text;
-//     console.log(top)
-//     // memePic.appendChild(top)
-//     return top;
-// }
+//I need to figure out how to add a listener that will load the image
+//BEFORE the text
 
-// function createBottomText(text) {
-//     const bottom = document.createElement("p")
-//     bottom.innerText = text;
-//     // memePic.appendChild(bottom)
-//     return bottom;
-// }
+// text.addEventListener("onload", function(e){
+//     console.log("loaded")
+// })
 
-// function createImage(text){
-//     const memePic = document.createElement("img")
-//     memePic.setAttribute('src', imgInput)
-// }
